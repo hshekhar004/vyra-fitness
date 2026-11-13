@@ -20,3 +20,11 @@ A single-page, local-first fitness, nutrition, exercise and wellness tracker. Up
 - Open Food Facts results are community-contributed and may not be exact; confirm values against your product's nutrition label. Manually entered values have no independent validation. Cooking methods, oils and weights change recipe values. This app cannot guarantee accurate calories or nutrition for arbitrary foods.
 - Exercise calories are estimates, not clinical measurements.
 - For real public launch, add authentication, row-level access controls, cloud storage, privacy controls, and an authoritative/licensed verified nutrition dataset.
+
+## V2.2 — Ask Me Out companion
+
+The last sidebar tab, **Ask Me Out**, includes a conversational assistant for remaining daily nutrition, water, exercise, and meal-combination suggestions. It uses saved food values and prioritizes previously logged foods when requested. No arbitrary nutritional reference values are generated. Chat history is kept in browser localStorage (`vyra_assist_chat_v1`), separate from fitness records. Clear chat from within the tab.
+
+The assistant is rule-based and **not a cloud generative AI model**. It supports common phrases in English, Hindi and German; it is not a general multilingual LLM. Voice input uses the browser Web Speech API where available; the browser may send audio to its speech-recognition provider. There is no text-to-speech output or AI backend. For a public launch with a true LLM, add a secure server-side endpoint and credentials, user authentication and stronger nutrition verification.
+
+Food suggestions are arithmetic combinations of saved items. They are not clinical diet plans. Values imported from Open Food Facts are community supplied and need label verification. GitHub Pages hosts this HTML file but does not provide synced user accounts or cloud persistence.
