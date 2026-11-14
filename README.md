@@ -1,30 +1,19 @@
-# Vyra — Turquoise Fitness Tracker
+# Vyra — Local Ask Me Out Edition
 
-A single-page, local-first fitness, nutrition, exercise and wellness tracker. Upload `index.html` at the root of your GitHub Pages repository. No build step required.
+## Publish on GitHub Pages
+1. Extract the ZIP.
+2. Upload `index.html` to the root of your existing GitHub repository, replacing the previous file.
+3. Commit. GitHub Pages will publish the updated page automatically.
 
-## Features
-- Turquoise/sea-glass theme, dashboard, daily goals, exercise, hydration, mood, body measurements, progress charts and saved local profile.
-- No unsourced built-in nutrition facts. Search packaged foods by name or barcode via **Open Food Facts** (internet required), or enter numbers from a manufacturer's label yourself. Community database records **are not verified**; check against the actual label. Generic Indian home-cooked dishes are not automatically measured or verified.
-- Save an individual food and reuse it; create saved meals from your saved food ingredients. Nutrients scale by weight.
-- Daily rituals: default nimbu pani and curry leaves, plus custom items. Ritual checkboxes deliberately do not add estimated calories.
-- Goal reached celebration/confetti for 5 seconds and warning when a tracked goal is exceeded.
-- JSON export/import backup and storage in the current browser only.
+## Changes
+Only the **Ask Me Out** assistant interface and behavior were updated:
+- Instant local answers: no network AI calls or deliberate response delay.
+- Chat history, new chats, chat switching, and chat deletion.
+- Progress graphs when logged data is available; if it isn't, the assistant says so.
+- Subtle turquoise styling with restrained pink highlights within the assistant tab.
+- Meal combinations based on saved food nutrients; no invented nutrition values.
 
-## Publish to GitHub Pages
-1. Extract ZIP. Upload `index.html` and `README.md` (NOT the ZIP itself) into the root of your GitHub repository.
-2. In repo Settings → Pages, choose Deploy from a branch → `main` → `/ (root)` → Save.
-3. Revisit the Pages URL after deployment.
+No paid API service or Cloudflare Worker is bundled. Existing fitness data stays in local browser storage, but back up your data before updating. Existing legacy AI connection settings in the separate Settings tab have deliberately not been altered because this is an Ask Me Out-only update; they are not used by this assistant.
 
 ## Important limitations
-- **Not yet a secure public account service.** GitHub Pages does not provide authentication, database or sync between devices. This local prototype cannot recover cleared browser data without a downloaded JSON backup.
-- Open Food Facts results are community-contributed and may not be exact; confirm values against your product's nutrition label. Manually entered values have no independent validation. Cooking methods, oils and weights change recipe values. This app cannot guarantee accurate calories or nutrition for arbitrary foods.
-- Exercise calories are estimates, not clinical measurements.
-- For real public launch, add authentication, row-level access controls, cloud storage, privacy controls, and an authoritative/licensed verified nutrition dataset.
-
-## V2.2 — Ask Me Out companion
-
-The last sidebar tab, **Ask Me Out**, includes a conversational assistant for remaining daily nutrition, water, exercise, and meal-combination suggestions. It uses saved food values and prioritizes previously logged foods when requested. No arbitrary nutritional reference values are generated. Chat history is kept in browser localStorage (`vyra_assist_chat_v1`), separate from fitness records. Clear chat from within the tab.
-
-The assistant is rule-based and **not a cloud generative AI model**. It supports common phrases in English, Hindi and German; it is not a general multilingual LLM. Voice input uses the browser Web Speech API where available; the browser may send audio to its speech-recognition provider. There is no text-to-speech output or AI backend. For a public launch with a true LLM, add a secure server-side endpoint and credentials, user authentication and stronger nutrition verification.
-
-Food suggestions are arithmetic combinations of saved items. They are not clinical diet plans. Values imported from Open Food Facts are community supplied and need label verification. GitHub Pages hosts this HTML file but does not provide synced user accounts or cloud persistence.
+This is a **rule-based** local assistant, not generative AI. It cannot create novel recipes reliably or understand every phrasing. Open Food Facts food values are unverified community data; verify labels. Without logs, graphs cannot display meaningful progress.
